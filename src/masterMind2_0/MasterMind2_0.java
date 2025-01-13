@@ -1,83 +1,50 @@
 package masterMind2_0;
 
-import java.util.Scanner;
+
 
 public class MasterMind2_0 {
 
 	public static void main(String[] args) {
 
+		
+//		Dit zijn de 3 variabele die ik gebruik voor mijn code.
 		int i = 0;
 		int guesses = 0;
 		int score = 0;
 
 		
 		
-		Scanner scanner = new Scanner(System.in);
+		
+		KleurenCode randomizercode = new KleurenCode();
+		
 		
 
 		while (guesses < 10) {
 			i++;
 			System.out.println("Guess: " + (i) + "/10\n" + "Please choose 4 out of any of the 6 Colors: R, G, B, Y, P, O");
-			String[] secretCode = { "P", "O", "Y", "G" };
-			String userCode[] = { scanner.next(), scanner.next(), scanner.next(), scanner.next() };
+			String[] secretCode = randomizercode.SecretCodeGenerator();
+			String userCode[] = randomizercode.UserInput();
+
 
 			
-			int x = 0;
+			String resultaat;             
 			
-			if (userCode[x].equals(secretCode[x])) {
-				System.out.print("B ");
-				score++;
-			} else if (userCode[x].equals(secretCode[1])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[2])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[3])) {
-				System.out.print("W ");
-			} else {
-				System.out.print("- ");
-			}
+			for (int x = 0; x < userCode.length; x++) {
+				resultaat = "- ";
+				if (userCode[x].equals(secretCode[x])) {
+				    resultaat = "B ";
+				    score++;
+				} else  {
+					for (int b = 0; b < userCode.length; b++) { 
+						if (userCode[x].equals(secretCode[b])) {
+							resultaat = "W ";
+							break;
+						}
+					}
+				    
+				} System.out.print(resultaat);
+			}	
 
-			++x;
-			if (userCode[x].equals(secretCode[x])) {
-				System.out.print("B ");
-				score++;
-			} else if (userCode[x].equals(secretCode[0])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[2])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[3])) {
-				System.out.print("W ");
-			} else {
-				System.out.print("- ");
-			}
-
-			++x;
-			if (userCode[x].equals(secretCode[x])) {
-				System.out.print("B ");
-				score++;
-			} else if (userCode[x].equals(secretCode[1])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[0])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[3])) {
-				System.out.print("W ");
-			} else {
-				System.out.print("- ");
-			}
-
-			++x;
-			if (userCode[x].equals(secretCode[x])) {
-				System.out.print("B ");
-				score++;
-			} else if (userCode[x].equals(secretCode[1])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[2])) {
-				System.out.print("W ");
-			} else if (userCode[x].equals(secretCode[0])) {
-				System.out.print("W ");
-			} else {
-				System.out.print("- ");
-			}
 
 			guesses++;
 
@@ -93,7 +60,7 @@ public class MasterMind2_0 {
 		} else {
 			System.out.println("\nYou have lost");
 		}
-		scanner.close();
+		
 
 	}
 }
