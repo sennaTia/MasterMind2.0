@@ -56,9 +56,9 @@ public class MasterMind2_0 {
 
 		}
 		if (score == 4) {
-			System.out.println("\nYou have won, GG");
+			randomizercode.zwartGewonnen();
 		} else {
-			System.out.println("\nYou have lost");
+			randomizercode.witVerloren();	
 		}
 		
 

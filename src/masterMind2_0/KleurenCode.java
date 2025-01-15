@@ -16,5 +16,15 @@ public class KleurenCode  {
 		String userCode[] = { scanner.next().toUpperCase(), scanner.next().toUpperCase(), scanner.next().toUpperCase(), scanner.next().toUpperCase() };
 		return userCode;
 	}
+	
+	public void zwartGewonnen () {
+			System.out.println("\nYou have won, GG");
+			return;
+	}
+	
+	public void witVerloren () {
+		System.out.println("\nYou have lost");
+		return; 
+	}
 
 }
