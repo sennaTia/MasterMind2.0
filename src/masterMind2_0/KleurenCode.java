@@ -3,7 +3,8 @@ package masterMind2_0;
 import java.util.Scanner;
 
 public class KleurenCode  {
-
+	public int score = 0;
+	
 	public String[] SecretCodeGenerator() {
 		String[] secretCode = { "R", "O", "B", "G" };
 		return secretCode;
@@ -17,6 +18,32 @@ public class KleurenCode  {
 		return userCode;
 	}
 	
+	public String[] resultaatChecker (String[] secretCode, String[] userCode) {
+
+		String resultaat;             
+		 String[] codeControleer = new String[4];
+		
+		
+		for (int x = 0; x < userCode.length; x++) {
+			resultaat = "- ";
+			if (userCode[x].equals(secretCode[x])) {
+			    resultaat = "B ";
+			    score++;
+			} else  {
+				for (int b = 0; b < userCode.length; b++) { 
+					if (userCode[x].equals(secretCode[b])) {
+						resultaat = "W ";
+						break;
+					}
+				}
+			    
+			} 
+			System.out.print(codeControleer[0]);
+		}	
+		 return codeControleer;
+	}
+
+	
 	public void zwartGewonnen () {
 			System.out.println("\nYou have won, GG");
 			return;
@@ -24,7 +51,12 @@ public class KleurenCode  {
 	
 	public void witVerloren () {
 		System.out.println("\nYou have lost");
-		return; 
+		return;
 	}
+		
+
+	
+
+
 
 }
