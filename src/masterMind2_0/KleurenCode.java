@@ -20,25 +20,25 @@ public class KleurenCode  {
 	
 	public String[] resultaatChecker (String[] secretCode, String[] userCode) {
 
-		String resultaat;             
+		             
 		 String[] codeControleer = new String[4];
 		
 		
 		for (int x = 0; x < userCode.length; x++) {
-			resultaat = "- ";
+			codeControleer[x] = "- ";
 			if (userCode[x].equals(secretCode[x])) {
-			    resultaat = "B ";
+			    codeControleer[x] = "B ";
 			    score++;
 			} else  {
 				for (int b = 0; b < userCode.length; b++) { 
 					if (userCode[x].equals(secretCode[b])) {
-						resultaat = "W ";
+						codeControleer[x] = "W ";
 						break;
 					}
 				}
 			    
 			} 
-			System.out.print(codeControleer[0]);
+			System.out.print(codeControleer[x]);
 		}	
 		 return codeControleer;
 	}

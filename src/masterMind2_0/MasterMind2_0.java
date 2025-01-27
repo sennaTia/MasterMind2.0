@@ -27,25 +27,7 @@ public class MasterMind2_0 {
 
 
 			String[] codeControleer = randomizercode.resultaatChecker(secretCode, userCode);
-//			
-//			String resultaat;             
-//			
-//			for (int x = 0; x < userCode.length; x++) {
-//				resultaat = "- ";
-//				if (userCode[x].equals(secretCode[x])) {
-//				    resultaat = "B ";
-//				    score++;
-//				} else  {
-//					for (int b = 0; b < userCode.length; b++) { 
-//						if (userCode[x].equals(secretCode[b])) {
-//							resultaat = "W ";
-//							break;
-//						}
-//					}
-//				    
-//				} 
-//				System.out.print(resultaat);
-//			}	
+
 
 
 			guesses++;
